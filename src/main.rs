@@ -136,8 +136,6 @@ impl ToDoList {
             .open("db.json")
             .expect("Failed to get dbfile");
 
-        dbg!(&self.list);
-
         serde_json::to_writer_pretty(dbfile, &self.list.as_slice());
     }
 
