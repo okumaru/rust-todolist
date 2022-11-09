@@ -84,8 +84,8 @@ impl ToDoList {
             match action {
                 ToDoActions::Add => println!("{: <15} {}", String::from("add: <foo>"), String::from("add the <foo> to the list of todolist")),
                 ToDoActions::Process => println!("{: <15} {}", String::from("process: <foo>"), String::from("update todolist <foo> to 'progress'")),
-                ToDoActions::Pause => println!("{: <15} {}", String::from("pause: <foo>"), String::from("update todolist <foo> to 'paused'")),
-                ToDoActions::Done => println!("{: <15} {}", String::from("done: <foo>"), String::from("update todolist <foo> to 'finish'")),
+                ToDoActions::Pause => println!("{: <15} {}", String::from("pause: <foo>"), String::from("update todolist <foo> to 'pausing!'")),
+                ToDoActions::Done => println!("{: <15} {}", String::from("done: <foo>"), String::from("update todolist <foo> to 'complete'")),
                 ToDoActions::Remove => println!("{: <15} {}", String::from("remove: <foo>"), String::from("delete todolist <foo> from todolist")),
                 ToDoActions::Status => println!("{: <15} {}", String::from("status"), String::from("show your todolist")),
                 ToDoActions::Help => println!("{: <15} {}", String::from("help"), String::from("show command of application")),
@@ -199,20 +199,6 @@ impl ToDoList {
                 new_list.push(new_item);
             }
         }
-
-        // self.list = vec![];
-
-        // let dbfile = fs::OpenOptions::new()
-        //     .write(true)
-        //     .create(true)
-        //     .read(true)
-        //     .truncate(true)
-        //     .open("db.json")
-        //     .expect("Failed to get dbfile");
-
-        // serde_json::to_writer_pretty(dbfile, &vec![ToDo { name: String::from("asd"), status: String::from("status")}]);
-
-        // &self.save();
 
         self.list = new_list;
 
